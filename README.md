@@ -6,3 +6,28 @@ It is a simple, fast, and reliable tool for daily use in the terminal, with loca
 
 This application was built with the purpose of studying and practicing the Rust programming language.
 
+
+---
+
+## Usage
+
+### Start focus
+cargo run -- start
+
+### Start break
+cargo run -- break
+
+### Configure duration
+cargo run -- config focus 45  
+cargo run -- config break 10
+
+### View current configuration
+cargo run -- config show
+
+### View history
+cargo run -- log
+
+### View statistics
+cargo run -- stats
+
+

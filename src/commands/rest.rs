@@ -6,14 +6,15 @@ use chrono::Local;
 use crate::model::{PomodoroLog, PomodoroType};
 use crate::storage::file;
 
-const BREAK_MINUTES: u64 = 1;
-
 pub fn run() {
+
+    let duration = crate::config::load().break_minutes;
+
     let start_time = Local::now();
-    let total_seconds = BREAK_MINUTES * 60;
+    let total_seconds = duration * 60;
     let start = Instant::now();
 
-    println!("☕ Break started: {} minutes", BREAK_MINUTES);
+    println!("☕ Break started: {} minutes", duration);
 
     loop {
         let elapsed = start.elapsed().as_secs();
@@ -34,7 +35,7 @@ pub fn run() {
     let log = PomodoroLog {
         kind: PomodoroType::Break,
         started_at: start_time,
-        duration_minutes: BREAK_MINUTES,
+        duration_minutes: duration,
     };
 
     if let Err(e) = file::save(log) {

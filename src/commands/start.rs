@@ -5,17 +5,19 @@ use chrono::Local;
 
 use crate::model::{PomodoroLog, PomodoroType};
 use crate::storage::file;
+use crate::config;
 
-
-const POMODORO_MINUTES: u64 = 1;
 
 pub fn run() {
 
-    let start_time = Local::now();
-    let total_seconds = POMODORO_MINUTES * 60;
-    let start = Instant::now();
+    let cfg = config::load();
+    let minutes = cfg.focus_minutes;
 
-    println!("🍅 Pomodoro started: {} minutes of focus", POMODORO_MINUTES);
+    println!("🍅 Pomodoro started: {} minutes of focus", minutes);
+
+    let start_time = Local::now();
+    let total_seconds = minutes * 60;
+    let start = Instant::now();
 
     loop {
         let elapsed = start.elapsed().as_secs();
@@ -36,7 +38,7 @@ pub fn run() {
     let log = PomodoroLog {
         kind: PomodoroType::Focus,
         started_at: start_time,
-        duration_minutes: POMODORO_MINUTES,
+        duration_minutes: minutes,
     }; 
 
     

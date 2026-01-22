@@ -17,6 +17,15 @@ pub enum Commands {
     Log,
     Break,
     Stats,
+    Config {
+        #[command(subcommand)]
+        action: ConfigAction,
+    },
 }
 
-
+#[derive(Subcommand)]
+pub enum ConfigAction {
+    Focus { minutes: u64 },
+    Break { minutes: u64 },
+    Show,
+}
