@@ -1,41 +1,29 @@
-use std::time::{Duration, Instant};
-use std::thread::sleep;
-
 use chrono::Local;
 
 use crate::model::{PomodoroLog, PomodoroType};
 use crate::storage::file;
+use crate::config;
+use crate::timer;
+
 
 pub fn run() {
+    
+    let minutes = config::load().break_minutes; 
 
-    let duration = crate::config::load().break_minutes;
+    println!("☕ Break started: {} minutes", minutes);
 
-    let start_time = Local::now();
-    let total_seconds = duration * 60;
-    let start = Instant::now();
+    let completed = timer::run_with_cancel(minutes);
 
-    println!("☕ Break started: {} minutes", duration);
 
-    loop {
-        let elapsed = start.elapsed().as_secs();
-        if elapsed >= total_seconds {
-            break;
-        }
-
-        let remaining = total_seconds - elapsed;
-        let minutes = remaining / 60;
-        let seconds = remaining % 60;
-
-        print!("\r⏳ Time remaining: {:02}:{:02}", minutes, seconds);
-        std::io::Write::flush(&mut std::io::stdout()).unwrap();
-
-        sleep(Duration::from_secs(1));
+    if !completed {
+        println!("\n⛔ Break canceled.");
+        return;
     }
 
     let log = PomodoroLog {
         kind: PomodoroType::Break,
-        started_at: start_time,
-        duration_minutes: duration,
+        started_at: Local::now(), 
+        duration_minutes: minutes
     };
 
     if let Err(e) = file::save(log) {

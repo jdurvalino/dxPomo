@@ -3,6 +3,8 @@ mod commands;
 mod model;
 mod storage;
 mod config;
+mod timer;
+
 
 use clap::Parser;
 use cli::{Cli, Commands, ConfigAction};
