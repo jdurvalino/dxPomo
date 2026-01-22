@@ -7,7 +7,7 @@ use crate::model::PomodoroLog;
 use crate::storage::file;
 
 
-const POMODORO_MINUTES: u64 = 1;
+const POMODORO_MINUTES: u64 = 50;
 
 pub fn run() {
 

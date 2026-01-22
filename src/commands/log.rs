@@ -13,7 +13,7 @@ pub fn run() {
             for (i, log) in logs.iter().enumerate() {
                 let time = log.started_at.format("%d/%m/%Y %H:%M");
                 println!(
-                    "{}. {} — {} minutos",
+                    "{}. {} — {} mimutes",
                     i + 1,
                     time,
                     log.duration_minutes
@@ -21,7 +21,7 @@ pub fn run() {
             }
         }
         Err(e) => {
-            eprintln!("⚠️ Erro ao carregar histórico: {}", e);
+            eprintln!("⚠️ Fail to load history: {}", e); 
         }
     }
 }
