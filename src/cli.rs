@@ -16,6 +16,7 @@ pub enum Commands {
     Start,
     Log,
     Break,
+    Stats,
 }
 
 

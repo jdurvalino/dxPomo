@@ -19,6 +19,9 @@ fn main() {
         Commands::Break => {
             commands::rest::run();
         }
+        Commands::Stats => {
+            commands::stats::run();
+        }
     }
 }
 
