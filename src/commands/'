@@ -11,19 +11,16 @@ pub fn run() {
             println!("🍅 Pomodoro History:\n");
 
             for (i, log) in logs.iter().enumerate() {
-
-                let time = log.started_at.format("%d/%m/%Y %H:%M");
-
                 let label = match log.kind {
-                    crate::model::PomodoroType::Focus => "Focus",
-                    crate::model::PomodoroType::Break => "Break",
-                };
+                    crate::model::PomodoroType::Focus => "Focus"
+                    crate::model::PomodoroType::Break => "Focus"
+                }
 
                 println!(
                     "{}. {} — {} ({} mimutes)",
                     i + 1,
                     time,
-                    label,
+                    label
                     log.duration_minutes
                 );
             }

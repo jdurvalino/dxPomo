@@ -15,6 +15,7 @@ pub struct Cli {
 pub enum Commands {
     Start,
     Log,
+    Break,
 }
 
 

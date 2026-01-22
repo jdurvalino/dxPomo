@@ -16,6 +16,9 @@ fn main() {
         Commands::Log => {
             commands::log::run();
         }
+        Commands::Break => {
+            commands::rest::run();
+        }
     }
 }
 
