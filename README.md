@@ -21,34 +21,50 @@ brew install dxpomo
 
 
 ### Start focus
+```bash
 dxpomo start
-
+```
 ![start](./img/start.jpg) 
 
 
 ### Start break
-dxpomo break
+```bash
+dxpomoo break
+```
 
 ![break](./img/break.jpg) 
 
 ### Configure duration
+``` bash
 dxpomo config focus 50  
+```
 
 ![confi focus](./img/config_focus.jpg) 
 
-
+```bash
 dxpomo config break 10
+``` 
 
 ![config break](./img/config_break.jpg) 
 
 
 ### View current configuration
+``` bash
 dxpomo config show
+``` 
 
 ![config show](./img/config_show.jpg) 
 
+> [!TIP]
+> The config are stored in a file called config.json, located in the .dxpomo directory in your Home directory.
+> ~/.dxPomo/log.json 
+
+
+
 ### View history
+``` bash 
 dxpomo log
+``` 
 
 ![log](./img/log.jpg) 
 
@@ -59,14 +75,16 @@ dxpomo log
 
 
 ### View statistics
+```bash 
 dxpomo stats
+```
 
 ![log](./img/stats.jpg) 
 
 ### Cycles
+``` bash 
 dxpomo start --auto --cycles n
-
--- n = integer
+```
 
 ![log](./img/auto.jpg) 
 
