@@ -11,6 +11,15 @@ This application was built with the purpose of studying and practicing the Rust 
 
 ## Usage
 
+
+## Instalation
+
+```bash
+brew tap jdurvalino/dxpomo
+brew install dxpomo
+```
+
+
 ### Start focus
 dxpomo start
 
