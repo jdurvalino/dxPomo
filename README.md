@@ -107,3 +107,18 @@ dxpomo start --auto --cycles n
 ![log](./img/auto.jpg) 
 
 
+
+## 🛠️ Built With
+
+- [Rust](https://www.rust-lang.org/)
+- [`clap`](https://crates.io/crates/clap) — CLI argument parsing
+- [`serde`](https://crates.io/crates/serde) — serialization and deserialization
+- [`chrono`](https://crates.io/crates/chrono) — date and time handling
+
+
+
+## 📄 License
+
+This project is open-source and available under the **MIT License**.  
+See the [LICENSE](./LICENSE) file for more details.
+
