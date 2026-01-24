@@ -2,8 +2,8 @@
 
 **dxPomo** is a command-line interface (CLI) application written in **Rust** for focus and productivity management using the **Pomodoro technique**.
 
-It is designed to be **simple, fast, and reliable**, making it ideal for daily use directly from the terminal.  
-All data is persisted locally, ensuring privacy and offline usage.
+It is designed to be **simple**, making it ideal for daily use directly from the terminal.  
+All data is persisted locally.
 
 This project was built with the goal of **studying and practicing Rust**, while delivering a real, usable tool.
 
