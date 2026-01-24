@@ -1,34 +1,20 @@
 use chrono::Local;
-
-use crate::model::{PomodoroLog, PomodoroType};
-use crate::storage::file;
 use crate::config;
 use crate::timer;
+use crate::commands::stats;
 
 
 pub fn run() {
-    
-    let minutes = config::load().break_minutes; 
+   
+    let cfg = config::load();
+    let started_at;
 
-    println!("☕ Break started: {} minutes", minutes);
-
-    let completed = timer::run_with_cancel(minutes);
-
-
-    if !completed {
-        println!("\n⛔ Break canceled.");
-        return;
+    println!("☕ Break start {} minutes", cfg.break_minutes);
+    started_at = Local::now();
+    if !timer::run_with_cancel(cfg.break_minutes){
+        println!("\n⛔ Break canceled");
+        return (); 
     }
-
-    let log = PomodoroLog {
-        kind: PomodoroType::Break,
-        started_at: Local::now(), 
-        duration_minutes: minutes
-    };
-
-    if let Err(e) = file::save(log) {
-        eprintln!("⚠️ Fail to save break time: {}", e);
-    }
-
+    stats::save_break_log(started_at, cfg.break_minutes);
     println!("\n✅ Break complete!");
 }

@@ -2,7 +2,7 @@ use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
 #[command(
-    name = "pomodoro",
+    name = "dxPomo",
     version,
     about = "CLI to control focus time like Pomodoro"
 )]
@@ -13,7 +13,7 @@ pub struct Cli {
 
 #[derive(Subcommand)]
 pub enum Commands {
-    Start,
+    Start(StartArgs),
     Log,
     Break,
     Stats,
@@ -29,3 +29,14 @@ pub enum ConfigAction {
     Break { minutes: u64 },
     Show,
 }
+
+#[derive(clap::Parser)]
+pub struct StartArgs {
+    #[arg(long)]
+    pub auto: bool, 
+
+    #[arg(long)]
+    pub cycles: Option<u32>,
+
+}
+

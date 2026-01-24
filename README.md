@@ -14,11 +14,15 @@ This application was built with the purpose of studying and practicing the Rust 
 ### Start focus
 cargo run -- start
 
+Irá iniciar um período de foco.
+
 ### Start break
 cargo run -- break
 
+Inicia um período de descanso
+
 ### Configure duration
-cargo run -- config focus 45  
+cargo run -- config focus 50  
 cargo run -- config break 10
 
 ### View current configuration
@@ -29,5 +33,3 @@ cargo run -- log
 
 ### View statistics
 cargo run -- stats
-
-

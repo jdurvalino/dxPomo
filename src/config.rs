@@ -6,6 +6,7 @@ use std::path::PathBuf;
 pub struct PomodoroConfig {
     pub focus_minutes: u64,
     pub break_minutes: u64,
+    pub cycles: u32,
 }
 
 impl Default for PomodoroConfig {
@@ -13,6 +14,7 @@ impl Default for PomodoroConfig {
         Self {
             focus_minutes: 25,
             break_minutes: 5,
+            cycles: 4,
         }
     }
 }

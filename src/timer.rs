@@ -1,28 +1,20 @@
 use std::{
     io::{self, Write},
-    sync::{
-        atomic::{AtomicBool, Ordering},
-        Arc,
-    },
     thread,
     time::Duration,
 };
 
+use crate::signal;
+
 const BAR_WIDTH: usize = 20;
 
 pub fn run_with_cancel(minutes: u64) -> bool {
-    let running = Arc::new(AtomicBool::new(true));
-    let flag = running.clone();
-
-    ctrlc::set_handler(move || {
-        flag.store(false, Ordering::SeqCst);
-    })
-    .expect("Fail to configure Ctrl+C");
 
     let total_seconds = minutes * 60;
 
     for elapsed in 0..=total_seconds {
-        if !running.load(Ordering::SeqCst) {
+
+        if signal::is_cancelled(){
             return false;
         }
 

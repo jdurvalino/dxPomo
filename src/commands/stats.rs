@@ -1,5 +1,6 @@
 use crate::storage::file;
-use crate::model::{PomodoroType};
+use crate::model::{PomodoroType,PomodoroLog};
+use chrono::{DateTime, Local};
 
 
 pub fn run() {
@@ -40,4 +41,28 @@ pub fn run() {
     println!("🛋️ Rest minutes: {}", break_minutes);
     println!("📦 Total sessions: {}", total_sessions);
     println!();
+}
+
+pub fn save_focus_log(started_at: DateTime<Local>, duration_minutes: u64) {
+    let log = PomodoroLog {
+        kind: PomodoroType::Focus,
+        started_at: started_at,
+        duration_minutes,
+    };
+
+    if let Err(e) = file::save(log) {
+        eprintln!("⚠️ Failed to save focus log: {}", e);
+    }
+} 
+
+pub fn save_break_log(started_at: DateTime<Local>, duration_minutes: u64) {
+    let log = PomodoroLog {
+        kind: PomodoroType::Break,
+        started_at: started_at,
+        duration_minutes,
+    };
+
+    if let Err(e) = file::save(log) {
+        eprintln!("⚠️ Failed to save break log: {}", e);
+    }
 }

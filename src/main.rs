@@ -4,17 +4,23 @@ mod model;
 mod storage;
 mod config;
 mod timer;
+mod signal;
 
 
 use clap::Parser;
 use cli::{Cli, Commands, ConfigAction};
 
 fn main() {
+    signal::init();
+
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::Start => {
-            commands::start::run();
+        Commands::Start(args) => {
+           commands::start::start(
+                args.auto,
+                args.cycles.unwrap_or_else(|| config::load().cycles),
+            );
         }
         Commands::Log => {
             commands::log::run();
