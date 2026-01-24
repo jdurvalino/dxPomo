@@ -1,18 +1,29 @@
 # 🍅 dxPomo CLI
 
-A command-line interface (CLI) application written in Rust for focus management in the Pomodoro style.
+**dxPomo** is a command-line interface (CLI) application written in **Rust** for focus and productivity management using the **Pomodoro technique**.
 
-It is a simple, fast, and reliable tool for daily use in the terminal, with local persistence of completed cycles.
+It is designed to be **simple, fast, and reliable**, making it ideal for daily use directly from the terminal.  
+All data is persisted locally, ensuring privacy and offline usage.
 
-This application was built with the purpose of studying and practicing the Rust programming language.
-
+This project was built with the goal of **studying and practicing Rust**, while delivering a real, usable tool.
 
 ---
 
-## Usage
+## ✨ Features
 
+- Focus and break timers (Pomodoro-style)
+- Configurable focus and break durations
+- Automatic multi-cycle execution
+- Cancel running timers with `Ctrl + C`
+- Visual countdown and progress bar
+- Local persistence of logs and statistics
+- Homebrew support for easy installation on macOS
 
-## Instalation
+---
+
+## 📦 Installation (macOS)
+
+Using **Homebrew**:
 
 ```bash
 brew tap jdurvalino/dxpomo
@@ -20,14 +31,18 @@ brew install dxpomo
 ```
 
 
-### Start focus
+---
+
+## Usage
+
+### Start a focus session
 ```bash
 dxpomo start
 ```
 ![start](./img/start.jpg) 
 
 
-### Start break
+### Start a break
 ```bash
 dxpomoo break
 ```
@@ -35,14 +50,17 @@ dxpomoo break
 ![break](./img/break.jpg) 
 
 ### Configure duration
+
+set a focus duration:
 ``` bash
-dxpomo config focus 50  
+dxpomo config focus n  
 ```
 
 ![confi focus](./img/config_focus.jpg) 
 
+Set a break duration:
 ```bash
-dxpomo config break 10
+dxpomo config break n
 ``` 
 
 ![config break](./img/config_break.jpg) 
