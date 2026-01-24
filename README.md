@@ -52,6 +52,12 @@ dxpomo log
 
 ![log](./img/log.jpg) 
 
+> [!TIP]
+> The logs are stored in a file called log.json, located in the .dxpomo directory within your Home directory.
+> ~/.dxPomo/log.json 
+
+
+
 ### View statistics
 dxpomo stats
 

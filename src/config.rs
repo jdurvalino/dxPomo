@@ -20,9 +20,19 @@ impl Default for PomodoroConfig {
 }
 
 fn config_path() -> PathBuf {
-    let mut path = dirs::home_dir().expect("Unable to locate the home directory.");
-    path.push(".dxpomo_config.json");
-    path
+
+    let mut dir = dirs::home_dir()
+        .expect("Unable to locate the home directory.");
+
+    dir.push(".dxPomo");
+
+    if !dir.exists() {
+        fs::create_dir_all(&dir)
+            .expect("Failed to create ~/.dxPomo directory");
+    }
+
+    dir.push("config.json");
+    dir
 }
 
 pub fn load() -> PomodoroConfig {
