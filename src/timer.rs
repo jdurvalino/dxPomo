@@ -6,7 +6,7 @@ use std::{
 
 use crate::signal;
 
-const BAR_WIDTH: usize = 20;
+const BAR_WIDTH: usize = 35;
 
 pub fn run_with_cancel(minutes: u64) -> bool {
 
