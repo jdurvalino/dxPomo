@@ -11,7 +11,7 @@ pub fn set_break(minutes: u64) {
     let mut cfg = config::load();
     cfg.break_minutes = minutes;
     config::save(&cfg);
-    println!("🛋️  Break duration set to {} minutes.", minutes);
+    println!("☕  Break duration set to {} minutes.", minutes);
 }
 
 pub fn show() {
@@ -20,7 +20,7 @@ pub fn show() {
     println!();
     println!("⚙️  Current configuration");
     println!("-------------------------");
-    println!("🔴 Focus: {} minutes", cfg.focus_minutes);
-    println!("🟢 Break: {} minutes", cfg.break_minutes);
+    println!("⏱️Focus: {} minutes", cfg.focus_minutes);
+    println!("☕Break: {} minutes", cfg.break_minutes);
     println!();
 }

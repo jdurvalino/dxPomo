@@ -12,24 +12,47 @@ This application was built with the purpose of studying and practicing the Rust 
 ## Usage
 
 ### Start focus
-cargo run -- start
+dxpomo start
 
-Irá iniciar um período de foco.
+![start](./img/start.jpg) 
+
 
 ### Start break
-cargo run -- break
+dxpomo break
 
-Inicia um período de descanso
+![break](./img/break.jpg) 
 
 ### Configure duration
-cargo run -- config focus 50  
-cargo run -- config break 10
+dxpomo config focus 50  
+
+![confi focus](./img/config_focus.jpg) 
+
+
+dxpomo config break 10
+
+![config break](./img/config_break.jpg) 
+
 
 ### View current configuration
-cargo run -- config show
+dxpomo config show
+
+![config show](./img/config_show.jpg) 
 
 ### View history
-cargo run -- log
+dxpomo log
+
+![log](./img/log.jpg) 
 
 ### View statistics
-cargo run -- stats
+dxpomo stats
+
+![log](./img/stats.jpg) 
+
+### Cycles
+dxpomo start --auto --cycles n
+
+-- n = integer
+
+![log](./img/auto.jpg) 
+
+

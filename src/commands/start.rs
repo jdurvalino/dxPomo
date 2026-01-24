@@ -38,7 +38,7 @@ fn run_auto_sequence(focus: u64, rest: u64, cycles: u32) {
         
         stats::save_focus_log(started_at, cfg.focus_minutes);
 
-        println!("\n☕ Break start {} minutes", cfg.break_minutes);
+        println!("\n☕Break start {} minutes", cfg.break_minutes);
 
         if !timer::run_with_cancel(rest) {
             println!("\n⛔ Sequence canceled");
