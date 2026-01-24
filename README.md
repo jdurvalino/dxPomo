@@ -56,7 +56,7 @@ dxpomo config show
 ![config show](./img/config_show.jpg) 
 
 > [!TIP]
-> The config are stored in a file called config.json, located in the .dxpomo directory in your Home directory.
+> The config are stored in a file called config.json, located in the .dxpomo in your Home directory.
 > ~/.dxPomo/log.json 
 
 
@@ -69,7 +69,7 @@ dxpomo log
 ![log](./img/log.jpg) 
 
 > [!TIP]
-> The logs are stored in a file called log.json, located in the .dxpomo directory within your Home directory.
+> The logs are stored in a file called log.json, located in the .dxpomo in your Home directory.
 > ~/.dxPomo/log.json 
 
 
