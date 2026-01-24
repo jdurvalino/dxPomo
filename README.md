@@ -116,6 +116,11 @@ dxpomo start --auto --cycles n
 - [`chrono`](https://crates.io/crates/chrono) — date and time handling
 
 
+## 🗺️ Roadmap
+
+See the project roadmap here: [ROADMAP.md](./ROADMAP.md)
+
+
 
 ## 📄 License
 
