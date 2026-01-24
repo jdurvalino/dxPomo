@@ -33,13 +33,16 @@ Display native macOS notifications when:
 Notifications will be **optional** and **configurable**, allowing users to enable or disable them according to their workflow.
 
 
-### Break session confirmation
-Before starting a break session, prompt the user for confirmation:
+
+### 3️⃣ Break Session Confirmation
+Before starting a break session, the application will prompt the user for confirmation:
 
 ```
 Focus session completed.
 Start break now? (y/n)
 ```
+
+This feature gives users greater control over their workflow and helps prevent unintended break sessions.
 
 
 📌 Notes
