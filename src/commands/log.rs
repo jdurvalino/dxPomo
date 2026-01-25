@@ -8,7 +8,8 @@ pub fn run() {
         Ok(mut logs) => {
             logs.sort_by(|a, b| b.started_at.cmp(&a.started_at));
 
-            println!("🍅 Pomodoro History:\n");
+            println!("🍅 Pomodoro History:");
+            println!("--------------------\n");
 
             for (i, log) in logs.iter().enumerate() {
 

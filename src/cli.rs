@@ -27,6 +27,7 @@ pub enum Commands {
 pub enum ConfigAction {
     Focus { minutes: u64 },
     Break { minutes: u64 },
+    Cycles { cycles: u32 }, 
     Show,
 }
 
@@ -35,7 +36,7 @@ pub struct StartArgs {
     #[arg(long)]
     pub auto: bool, 
 
-    #[arg(long)]
+    #[arg(long, value_parser = clap::value_parser!(u32).range(1..))]
     pub cycles: Option<u32>,
 
 }

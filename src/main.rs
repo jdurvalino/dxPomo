@@ -34,6 +34,7 @@ fn main() {
         Commands::Config { action } => match action {
             ConfigAction::Focus { minutes } => commands::config::set_focus(minutes),
             ConfigAction::Break { minutes } => commands::config::set_break(minutes),
+            ConfigAction::Cycles { cycles } => commands::config::set_cycles(cycles),
             ConfigAction::Show => commands::config::show(),
         },
     }

@@ -9,6 +9,11 @@ pub fn start(auto: bool, cycles: u32) {
     let started_at;
 
     if auto {
+        if cycles == 0 {
+            eprintln!("❌ Cycles must be greater than zero");
+            return;
+        }
+
         run_auto_sequence(cfg.focus_minutes, cfg.break_minutes, cycles);
     } else {
         println!("▶ Focus start {} minutes", cfg.focus_minutes);
@@ -25,7 +30,6 @@ fn run_auto_sequence(focus: u64, rest: u64, cycles: u32) {
     let mut current_cycle = 1;
     let mut started_at;
     let cfg = config::load();
-
 
     loop {
         println!("\n▶ Focus start {} minutes (Cycle {}/{})", cfg.focus_minutes, current_cycle, cycles);

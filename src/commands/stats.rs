@@ -34,12 +34,12 @@ pub fn run() {
 
     println!();
     println!("📊 Pomodoro Statistics");
-    println!("---------------------------");
-    println!("🔴 Focus sessions: {}", focus_count);
-    println!("⏱️ Minutes of focus: {}", focus_minutes);
-    println!("🟢 Rest periods: {}", break_count);
-    println!("🛋️ Rest minutes: {}", break_minutes);
-    println!("📦 Total sessions: {}", total_sessions);
+    println!("----------------------");
+    println!("▶ Focus sessions: {}", focus_count);
+    println!("⏱️ Focus minutes: {}", focus_minutes);
+    println!("☕Rest periods: {}", break_count);
+    println!("⏱️ Rest minutes: {}", break_minutes);
+    println!("∑ Total sessions: {}", total_sessions);
     println!();
 }
 

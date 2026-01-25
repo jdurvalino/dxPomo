@@ -14,6 +14,17 @@ pub fn set_break(minutes: u64) {
     println!("☕  Break duration set to {} minutes.", minutes);
 }
 
+pub fn set_cycles(cycles: u32) {
+    if cycles == 0 {
+        eprintln!("❌ The number of cycles must be greater than zero");
+        return;
+    }
+    let mut config = config::load();
+    config.cycles = cycles;
+    config::save(&config);
+    println!("∞ Automatic cycles set to {}", cycles);
+}
+
 pub fn show() {
     let cfg = config::load();
 
@@ -22,5 +33,6 @@ pub fn show() {
     println!("-------------------------");
     println!("⏱️Focus: {} minutes", cfg.focus_minutes);
     println!("☕Break: {} minutes", cfg.break_minutes);
+    println!("∞ Cycles: {}", cfg.cycles);
     println!();
 }
