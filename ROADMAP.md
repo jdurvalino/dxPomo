@@ -8,22 +8,7 @@ The roadmap is subject to change based on feedback, usage patterns, and project 
 
 ## 🚀 Planned Features
 
-### 1️⃣ Automatic cycle configuration
-Allow users to define the number of Pomodoro cycles directly in the configuration file.
-
-**Example:**
-```json
-{
-  "auto_cycles": 4
-}
-``` 
-
-and allow
-```bash 
-dxpomo start --auto
-``` 
-
-### 2️⃣ macOS Notifications
+### 1️⃣ macOS Notifications
 
 Display native macOS notifications when:
 - A focus session ends
@@ -34,7 +19,7 @@ Notifications will be **optional** and **configurable**, allowing users to enabl
 
 
 
-### 3️⃣ Break Session Confirmation
+### 2️⃣ Break Session Confirmation
 Before starting a break session, the application will prompt the user for confirmation:
 
 ```
@@ -45,9 +30,4 @@ Start break now? (y/n)
 This feature gives users greater control over their workflow and helps prevent unintended break sessions.
 
 
-📌 Notes
-
-All features will prioritize simplicity and terminal-first usability.
-Backward compatibility will be preserved whenever possible.
-Improvements may be released incrementally across minor versions.
 
