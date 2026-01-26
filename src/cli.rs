@@ -38,6 +38,5 @@ pub struct StartArgs {
 
     #[arg(long, value_parser = clap::value_parser!(u32).range(1..))]
     pub cycles: Option<u32>,
-
 }
 

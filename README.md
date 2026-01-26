@@ -44,7 +44,7 @@ dxpomo start
 
 ### Start a break
 ```bash
-dxpomoo break
+dxpomo break
 ```
 
 ![break](./img/break.jpg) 
@@ -126,4 +126,4 @@ See the project roadmap here: [ROADMAP.md](./ROADMAP.md)
 
 This project is open-source and available under the **MIT License**.  
 See the [LICENSE](./LICENSE) file for more details.
-
+ 
